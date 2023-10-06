@@ -1,0 +1,9 @@
+<tr>
+  <td>
+    <%= image_tag order.product.image.thumb.url, alt: order.product.name, class: 'img-thumbnail' %>
+    <%= order.product.name %>
+  </td>
+  <td><%= order.product.description %></td>
+  <td><%= order.quantity %></td>
+  <td><%= humanized_money_with_symbol order.product.price %></td>
+</tr>

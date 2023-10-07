@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'login/new'
+  get 'login/create'
+  get 'login/destroy'
+  get 'users/new'
+  get 'users/create'
   namespace :admin do
     get 'categories/index'
     get 'categories/new'
@@ -30,9 +35,13 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories, only: [:index, :new, :create]
   end
-  
+
+  resources :users, only: [:new, :create]
+  resources :login, only: [:new, :create]
 
   get 'about', to: 'about#index'
+  delete 'logout', to: 'login#destroy', as: 'logout'
+  post '/login', to: 'login#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

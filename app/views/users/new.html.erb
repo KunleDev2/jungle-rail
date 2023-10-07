@@ -1,0 +1,30 @@
+<h1>Users Registeration#new</h1>
+
+<%= form_for @user do |user| %>
+  <div>
+    <%= user.label :first_name %>
+    <%= user.text_field :first_name, required: true %>
+  </div>
+
+  <div>
+    <%= user.label :last_name %>
+    <%= user.text_field :last_name, required: true %>
+  </div>
+
+  <div>
+    <%= user.label :email %>
+    <%= user.email_field :email, required: true %>
+  </div>
+
+  <div>
+    <%= user.label :password %>
+    <%= user.password_field :password, required: true %>
+  </div>
+
+  <div>
+    <%= user.label :password_confirmation %>
+    <%= user.password_field :password_confirmation, required: true %>
+  </div>
+
+  <%= user.submit 'Register' %>
+<% end %>
